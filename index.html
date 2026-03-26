@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Wandile 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Poppins,sans-serif;
+color:white;
+
+/* dreamy romantic background */
+
+background: radial-gradient(circle at 30% 20%, #ff9aa2, transparent 40%),
+            radial-gradient(circle at 80% 80%, #ff4d6d, transparent 40%),
+            #0a0a0a;
+}
+
+/* stars */
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+0%{opacity:0.2;}
+100%{opacity:1;}
+}
+
+/* card */
+
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:60px;
+border-radius:25px;
+text-align:center;
+width:600px;
+box-shadow:0 0 60px rgba(255,100,150,0.3);
+}
+
+/* title */
+
+h1{
+font-family:"Great Vibes",cursive;
+font-size:60px;
+margin-bottom:15px;
+}
+
+/* text */
+
+p{
+font-size:20px;
+line-height:1.6;
+}
+
+/* button */
+
+button{
+margin-top:30px;
+padding:15px 40px;
+border:none;
+border-radius:50px;
+background:#ff2e63;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* hidden message */
+
+#message{
+display:none;
+margin-top:25px;
+}
+
+/* falling elements */
+
+.float{
+position:absolute;
+top:-50px;
+font-size:24px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-50px) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Happy Birthday Wandile 🎂💖</h1>
+
+<p>
+I wanted to do something special for you…  
+something small, but from the heart.
+</p>
+
+<button onclick="surprise()">Click for your Surprise 🎁</button>
+
+<div id="message">
+
+<p>Wandile… ❤️</p>
+
+<p>
+Ngiyakuthanda.  
+I love you more than words can explain.
+</p>
+
+<p>
+“You are my today and all of my tomorrows.” 💖
+</p>
+
+<p>
+Happy Birthday beautiful 🎂✨
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* stars background */
+
+for(let i=0;i<120;i++){
+let star=document.createElement("div");
+star.className="star";
+star.style.top=Math.random()*100+"vh";
+star.style.left=Math.random()*100+"vw";
+star.style.animationDuration=(1+Math.random()*3)+"s";
+document.body.appendChild(star);
+}
+
+/* surprise */
+
+function surprise(){
+
+document.getElementById("message").style.display="block";
+
+/* falling mix */
+
+const icons = ["🌸","🌹","✨","💖","🎉","🎂","⭐"];
+
+for(let i=0;i<60;i++){
+
+let item=document.createElement("div");
+item.className="float";
+
+item.innerHTML = icons[Math.floor(Math.random()*icons.length)];
+
+item.style.left=Math.random()*100+"vw";
+item.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(item);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
